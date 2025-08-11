@@ -112,5 +112,3 @@ unsigned count = 100;     // non-negative integer
 ~    // bitwise NOT
 
 ```
-
-
