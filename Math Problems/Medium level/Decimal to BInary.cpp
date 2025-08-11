@@ -4,15 +4,14 @@
 
 using namespace std;
 
-
+// The code checks binary
+//
 int main(){
-    int a, mem, counter;
+    int a;
     a = 31;
     string binary;
     cout << "Enter a number to convert to binary :";
     cin >> a;
-    counter = 0;
-    mem = 1;
     binary = "";
     
 

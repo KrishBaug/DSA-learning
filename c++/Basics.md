@@ -69,7 +69,7 @@ double pi = 3.14;         // floating-point
 unsigned count = 100;     // non-negative integer
 ~~~
 
-## Literals
+### Literals
 ```cpp
 42         // decimal
 0b101010   // binary
@@ -79,3 +79,38 @@ unsigned count = 100;     // non-negative integer
 314e-2     // floating-point with exponent
 1'000'000  // digit separator for readability
 ```
+
+### Arithematic 
+```cpp
++   // addition
+-   // subtraction
+*   // multiplication
+/   // division
+%   // remainder (integer only)
+```
+
+### Comparison Operator
+```cpp
+==  // equal
+!=  // not equal
+<   // less than
+>   // greater than
+<=  // less or equal
+>=  // greater or equal
+```
+
+### Logical & Bitwise Operator
+```cpp
+&&   // logical AND
+||   // logical OR
+!    // logical NOT
+
+//Bitwise (operator on bits)
+&    // bitwise AND
+|    // bitwise OR
+^    // bitwise XOR
+~    // bitwise NOT
+
+```
+
+
