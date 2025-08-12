@@ -212,7 +212,7 @@ int main() {
 
 4. `globalVar` exists the whole time the program runs.
 
-## Constants in C++
+### Constants in C++
 * `const`: Value cannot be changed after initialization; can be runtime-evaluated.
 * `constexpr`: Must be compile time evaluable; enables placing data in read-only memory.
 * `consteval`: Must be evaluated at compile time; cannot be used with runtime values.
