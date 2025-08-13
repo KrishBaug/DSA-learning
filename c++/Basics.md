@@ -87,11 +87,3 @@ Examples: iostream, string, vector, algorithms (sort, find).
 3. **STL (Standard Template Library)**: A part of the standard library focused on generic, template-based components.
 Examples: Containers (vector, list, map), Iterators, Algorithms (sort, reverse).
 
-
-
-
-
-
-
-
-
