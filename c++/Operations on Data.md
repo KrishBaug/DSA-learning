@@ -214,10 +214,10 @@ Using cmath library `<cmath>`
 the <cmath> library provides mathematical functions and constants for floating-point and integer operations
 
 1. Basic Arithematic Functions
-   | Function         | Purpose                  | Example              |
-| ---------------- | ------------------------ | -------------------- |
-| `std::abs(x)`    | Absolute value           | `abs(-5) → 5`        |
-| `std::fabs(x)`   | Absolute (float/double)  | `fabs(-3.14) → 3.14` |
-| `std::fmod(x,y)` | Floating-point remainder | `fmod(5.3, 2) → 1.3` |
+    | Function         | Purpose                  | Example              |
+    | ---------------- | ------------------------ | -------------------- |
+    | `std::abs(x)`    | Absolute value           | `abs(-5) → 5`        |
+    | `std::fabs(x)`   | Absolute (float/double)  | `fabs(-3.14) → 3.14` |
+    | `std::fmod(x,y)` | Floating-point remainder | `fmod(5.3, 2) → 1.3` |
 
 
