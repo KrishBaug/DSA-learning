@@ -220,4 +220,94 @@ the <cmath> library provides mathematical functions and constants for floating-p
     | `std::fabs(x)`   | Absolute (float/double)  | `fabs(-3.14) → 3.14` |
     | `std::fmod(x,y)` | Floating-point remainder | `fmod(5.3, 2) → 1.3` |
 
+2. Power & Root
+    | Function          | Purpose     | Example          |
+    | ----------------- | ----------- | ---------------- |
+    | `std::pow(x,y)`   | x^y         | `pow(2,3) → 8`   |
+    | `std::sqrt(x)`    | Square root | `sqrt(16) → 4`   |
+    | `std::cbrt(x)`    | Cube root   | `cbrt(27) → 3`   |
+    | `std::hypot(x,y)` | √(x² + y²)  | `hypot(3,4) → 5` |
 
+3. Exponential & logarithmic
+    | Function        | Purpose                              | Example            |
+    | --------------- | ------------------------------------ | ------------------ |
+    | `std::exp(x)`   | e^x                                  | `exp(1) → 2.71828` |
+    | `std::expm1(x)` | e^x - 1 (more accurate for small x)  |                    |
+    | `std::log(x)`   | Natural log                          | `log(e) → 1`       |
+    | `std::log10(x)` | Log base 10                          | `log10(100) → 2`   |
+    | `std::log2(x)`  | Log base 2                           | `log2(8) → 3`      |
+    | `std::log1p(x)` | log(1+x) (more accurate for small x) |                    |
+
+4. Trignometric function:
+    | Function          | Purpose             | Example            |
+    | ----------------- | ------------------- | ------------------ |
+    | `std::sin(x)`     | Sine (x in radians) | `sin(M_PI/2) → 1`  |
+    | `std::cos(x)`     | Cosine              | `cos(0) → 1`       |
+    | `std::tan(x)`     | Tangent             |                    |
+    | `std::asin(x)`    | Arcsine             |                    |
+    | `std::acos(x)`    | Arccosine           |                    |
+    | `std::atan(x)`    | Arctangent          |                    |
+    | `std::atan2(y,x)` | Arctangent(y/x)     | `atan2(1,1) → π/4` |
+
+5. Hyperbolic
+   | Function        | Purpose            |
+| --------------- | ------------------ |
+| `std::sinh(x)`  | Hyperbolic sine    |         
+| `std::cosh(x)`  | Hyperbolic cosine  |         
+| `std::tanh(x)`  | Hyperbolic tangent |         
+| `std::asinh(x)` | Inverse sinh       |         
+| `std::acosh(x)` | Inverse cosh       |         
+| `std::atanh(x)` | Inverse tanh       |         
+
+
+6. Rounding & Remainder:
+    | Function              | Purpose                            | Example          |
+    | --------------------- | ---------------------------------- | ---------------- |
+    | `std::ceil(x)`        | Round up                           | `ceil(2.3) → 3`  |
+    | `std::floor(x)`       | Round down                         | `floor(2.9) → 2` |
+    | `std::trunc(x)`       | Remove fractional part             | `trunc(2.9) → 2` |
+    | `std::round(x)`       | Round to nearest int               | `round(2.5) → 3` |
+    | `std::lround(x)`      | Round → long                       |                  |
+    | `std::llround(x)`     | Round → long long                  |                  |
+    | `std::rint(x)`        | Round (floating)                   |                  |
+    | `std::nearbyint(x)`   | Round (floating, no FP exceptions) |                  |
+    | `std::remainder(x,y)` | IEEE remainder                     |                  |
+
+
+7. Sign & Classification
+    | Function             | Purpose                      | Example |
+    | -------------------- | ---------------------------- | ------- |
+    | `std::signbit(x)`    | Returns true if sign bit set |         |
+    | `std::isfinite(x)`   | Checks finite                |         |
+    | `std::isinf(x)`      | Checks infinity              |         |
+    | `std::isnan(x)`      | Checks NaN                   |         |
+    | `std::fpclassify(x)` | Classifies float type        |         |
+
+
+8. Min/ Max & Difference
+    | Function         | Purpose             | Example |
+    | ---------------- | ------------------- | ------- |
+    | `std::fmax(x,y)` | Larger of x and y   |         |
+    | `std::fmin(x,y)` | Smaller of x and y  |         |
+    | `std::fdim(x,y)` | Positive difference |         |
+
+
+## Weird Integeral Types
+1. Small Types (`short`, `char`)
+   * short int -> 2 bytes
+   * char -> 1 byte
+2. Why you arithematic on them
+   * C++ promotes them to `int` before calculations
+   * This is why
+```cpp
+short int var1 {10}; // 2 bytes
+short int var2 {20};
+
+char var3 {40}; //1
+char var4 {50};
+
+std::cout << "size of var1 : " << sizeof(var1) << std::endl;
+std::cout << "size of var2 : " << sizeof(var2) << std::endl;
+```
+
+it will show size as four bytes as it was promoted to int.
