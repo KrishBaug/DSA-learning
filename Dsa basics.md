@@ -1,104 +1,135 @@
-# Analysis of Algorithms
+## Introduction to algorithm
 
-****Analysis of Algorithms**** is a fundamental aspect of computer science that involves evaluating performance of algorithms and programs. Efficiency is measured in terms of time and space.
+**Algoriithm**: 
+* "**A step by step procedure for a solving a computational problem**"
+* This is the fundamental definition everyone should know.
 
+**Algorithm vs. Program: Key Differences**
+| **Algorithm** | **Program** |
+|---------------|-------------|
+|Design the logic and procedure to solve a problem | Implement the designed solution code. |
+| Created during the Design Phase of the SDLC | Created during the implementation phase of the SDLC.
 
-**Importance of Analysis of Algorithms**
+Some Terms in algorithm:
+1. **Algorithm :** The design-time, abstract, step by step logic for solving a problem, written in pseudocode. Focus is on correctness and efficiency analysis. Hardware / OS independent.
+2. **Program :** The implementation time, concrete translation of the algorithm into a specific programming language. Focus is on functional testing. Hardware/ OS dependent.
+3. **Pseudocode**: The language of algorithm - clear, logical, human-readable, often C-like for famlilarity, independent of execution environment.
+4. **Design First**: Algorithm are the essential design blueprint created before coding to ensure a correct, efficient, and well understood solution. 
 
-* Performance supports user-friendliness, security, and maintainability.
-* Good performance is necessary to handle large tasks (scale).
-* Slow features fail when tasks grow bigger.
-* Analysis estimates time and memory needed by an algorithm.
-* It helps predict behavior for large inputs.
-* Simple measures save time instead of testing every change.
-* Comparing algorithms helps choose the best one.
-
-
-## **Order of Growth**
-
-How to calculate order of growth ?
-
-
-**Ex 1.** f(n) = 1000, g(n) = n + 1
-
-g(n) is always 1 greater than f(n)
-
-
-**Ex 2.** f(n) = $4n^2$, g(n) = 2n + 2000
-
-Here f(n) grows quadratically whereas g(n) expands linearly.
+## Charateristics of Algorithm:
+1. Input: There is 0 or more input
+2. Output: there is alteast one output
+3. Definitness : Every step must be clear, precise, and have only one interpretation. Humans and computers must execute it exactly as intended. No vague or impossible instruction.
+4. Finitness: The algorithm must terminate after a finite nnumber of steps
+5. Effectiveness : Every step must be basic, executable, and necessary. No superfluous actions
 
 
-**Calculate quickly :**
+## How to write and anlayze algorithm
+Algorithm for swaping valuw in a and b.
+```
+begin
+  temp <- a
+  a <- b
+  b <- temp
+end
+```
 
-**Ex 1**: $4n^2 + 3n + 100$
+### How to analyze alogrithm 
+1. Time : An algorithm has time functions which can scale or change according to the size or over time it can be analyzed based on time function.
+2. Space : It is space used by the algorithm
+3. Network consumption : How much data will be transfered by network.
+4. Power Consumption
+5. CPU Registers : when disgning algorithm for a low level applications no. of CPU registers used also matters.
 
-Take the highest order of variable.
+Calculating Time:
+```cpp
+\\ Algorithm swap
+{
+  temp = a;
+  a = b;
+  b  = a;
+}
+```
 
-Here the growth order is $n^2$
+Every line of command or statement is taken as 1 unit time. 
+so the time functions is : **f(n) = 3**
 
-**Ex 2.**
+Calculating Space:
+Taking the same algorithm to swap variable.
+There are three variable and each varible is taken as one word.
+Therefore, Space compellxity Function: **S(n) = 3**
 
-$100 n \log n + 3n + 100 \log n + 2$
+## Frequency  Count Method
+Example : 
+What does the alg do: To find the sum of elements in the array 
+Algorithm of sum (A, n)
+Array has five elements, so `n = 5`
+```cpp
+{
+  s = 0
+  for {i = 0; i < n; i++}{
+    s = s + A[i]
+  }
+  return s;
+}
+```
+calculating time fxn for the alg step by step.
+1. `s = 0` counts as 1 statement -> 1
+2. for loop runs `n` times (in this case runs for 5 times whch = to n) successfully but the at last attempt when tries to run again the condition is false and the loop breaks. So total no. times loop was run was `n + 1`
+3. The statement inside the loop also runs for `n` no. of times. -> `n`
+4. `return s` counts as a statement.
 
-Here growth order in n log n
+So time funcition is, `f(x) = 1 + n + 1 + n + 1 = 2n + 3`
+
+Degree of polynomial is 1. So it is order of n ==> O(n)
+
+**Space complexity**:
+1. There are `n` of elements in the array --> n
+2. And there are three variables n, s, i -> 3
+
+So, space complecity is S(n) = `n + 3`
+
+Example 2:
+Adds n no. of 3x3 matrices
+Algorithm add (A, B, n)
+```cpp
+for (i = 0; i < n; i++){ // n + 1
+  for (j = 0; j < n; j++){ // n * (n+1)
+    c[i, j] = A[i, j] + B[i, j]; // n * n
+  }
+}
+```
+
+Total Time Complexity: $2n^2 + 2n + 1$
+Order of $n^2$ --> O($n^2$)
+
+Space Complexity:
+The variables used:
+1. ABC are matrices 3x3
+   A -> $n^2$
+   B -> $n^2$
+   C -> $n^2$
+2. There are three variables `i, j, n` which are taken as one word.
+So, space complexity is : $3n^2 + 3$
+
+Example 3:
+the alg multiplies n no. of matrices
+![alt text](SS/image.png)
+
+Time Complexity : `f(x) = $2n^3 + 3n^2 + 2n + 1$`
+Order of $n^3$ -> O($n^3$)
+
+Space Complexity:
+A -> $n^2$
+B -> $n^2$
+C -> $n^2$
+n -> 1
+i -> 1
+j -> 1
+k -> 1
+
+Space Time complexity = `S(n) = $3n^2 + 4$`
+Order of $n^3$ -> O($n^2$)
 
 
-Compare growth order:
 
-c < log log n < log n < $n^{1/3}$ < $n^{1/2}$ < n < n log n < $n^2$ < $n^2 \log n$ < $n^3$ < $n^4$ < $2^n$ < $n^n$
-
-
-## Asymptomatic Analysis
-
-
-* Asymptotic Analysis studies algorithm performance based on input size, not exact running time.
-* It measures the order of growth of time or space as input size increases (e.g., linear, logarithmic).
-* Example:
-  * Linear Search grows linearly (O(n)).
-  * Binary Search grows logarithmically (O(log n)).
-* For small inputs, a slower algorithm on a faster machine may be quicker.
-* For large inputs, order of growth dominates machine speed differences.
-* Machine constants become negligible as input size grows very large.
-* Example constants:
-  * Machine A (fast): constant 0.2
-  * Machine B (slow): constant 1000
-* Running time formulas:
-  * Linear Search on A: 0.2 * n
-  * Binary Search on B: 1000 * log(n)
-* Asymptotic Analysis ignores constants, so two algorithms with same order (e.g., 1000nlogn vs 2nlogn) are considered equal asymptotically.
-* It can’t always predict practical performance (e.g., Quick Sort faster than Heap Sort despite worse worst-case).
-* Asymptotic analysis focuses on large inputs; sometimes slower asymptotic algorithms perform better on small inputs used in practice
-
-
-
-* **Worst Case Analysis**
-
-  * Calculates the maximum running time (upper bound).
-  * Focuses on input causing the most operations.
-  * Example: Linear Search worst case = element not in array (checks all).
-  * Mostly used because it guarantees max time needed.
-* **Best Case Analysis**
-
-  * Calculates minimum running time (lower bound).
-  * Focuses on input causing least operations.
-  * Example: Linear Search best case = element at first position (only 1 check).
-  * Rarely used because it gives overly optimistic view.
-* **Average Case Analysis**
-
-  * Calculates average running time over all inputs.
-  * Requires knowledge of input distribution.
-  * Example: Linear Search average assumes element equally likely anywhere or absent.
-  * Rarely used because it is hard to predict inputs and frequencies.
-* **Why Worst Case Mostly Used?**
-
-  * Easier to compute than average case.
-  * Provides useful upper bound for software guarantees.
-* **Asymptotic Notation and Cases**
-
-  * Some algorithms have same time for all cases (e.g., Merge Sort is always O(n log n)).
-  * Others vary:
-    * Quick Sort worst case: sorted input (O(n²))
-    * Quick Sort best case: balanced splits (O(n log n))
-    * Insertion Sort worst case: reverse sorted (O(n²))
-    * Insertion Sort best case: already sorted (O(n))
