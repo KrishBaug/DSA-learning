@@ -106,9 +106,9 @@ Order of $n^2$ --> O($n^2$)
 Space Complexity:
 The variables used:
 1. ABC are matrices 3x3
-   A -> $n^2$
-   B -> $n^2$
-   C -> $n^2$
+   A -> $n^2$,
+   B -> $n^2$,
+   C -> $n^2$,
 2. There are three variables `i, j, n` which are taken as one word.
 So, space complexity is : $3n^2 + 3$
 
@@ -120,13 +120,13 @@ Time Complexity : `f(x) = $2n^3 + 3n^2 + 2n + 1$`
 Order of $n^3$ -> O($n^3$)
 
 Space Complexity:
-A -> $n^2$
-B -> $n^2$
-C -> $n^2$
-n -> 1
-i -> 1
-j -> 1
-k -> 1
+A -> $n^2$,
+B -> $n^2$,
+C -> $n^2$,
+n -> 1,
+i -> 1,
+j -> 1,
+k -> 1,
 
 Space Time complexity = `S(n) = $3n^2 + 4$`
 Order of $n^3$ -> O($n^2$)
