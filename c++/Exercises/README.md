@@ -10,7 +10,6 @@ Exercises:
 
 * Print multiplication table of a number using for and while.
 
-* Program to count digits, vowels, consonants from user input string.
 
 Mini-Project:
 
