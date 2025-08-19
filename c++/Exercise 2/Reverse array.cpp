@@ -17,6 +17,7 @@ int main(){
         *temp = *(arr + i);
         *(arr + i) = *(arr + size - 1 - i);
         *(arr1 + size - 1 - i) = * temp;
+        delete temp;
     }
 
     std::cout << "Reversed array : ";
