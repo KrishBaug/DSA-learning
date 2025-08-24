@@ -1,4 +1,4 @@
-Covers: Variables, data types, operators, conditions, loops.
+# Variables, data types, operators, conditions, loops.
 
 Exercises:
 

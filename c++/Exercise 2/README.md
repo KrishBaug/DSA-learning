@@ -1,5 +1,5 @@
-Arrays, pointers, memory management
-Covers: Arrays, bounds, pointers, new/delete, memory leaks.
+# Arrays, pointers, memory management
+
 
 **Exercises:**
 * Reverse an array using pointers.
