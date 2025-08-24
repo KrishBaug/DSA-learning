@@ -8,7 +8,6 @@
 
 * Concatenate two C-strings manually (without strcat).
 
-* Copy one string into another using strcpy and then without it.
 
 * Use std::string to reverse a sentence word by word.
 
